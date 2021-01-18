@@ -12,59 +12,30 @@
 </head>
 
 <body>
-    <div class="timer" id="timer">
-        <h3> Timer: </h3>
+    <div class="timer">
+        <h3> Timer: <span id="timer"> 60 </span> </h3>
+    </div>
+    <div class="score">
+        <h3> Score: <span id="score"> 0 </span> </h3>
     </div>
     <div class="ui center aligned container" id="biggestBox">
         <div>
             <h1 class="pgHeading">Coding Quiz Challenge</h1>
         </div>
-        <br>
         <div class="content">
-            <h2 class="question" id="questionHdr">Question</h2>
-            <br>
-            <div class="questionCntnt" id="question"> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis, quae.
-                Perspiciatis facere dolore blanditiis debitis natus? </div>
-            <br>
-
-            <div class="ui vertical buttons">
-                <button class="ui button answer" id="options" id="optionA"> Option A - Lorem, ipsum dolor
-                    sit amet
-                    consectetur adipisicing eli</button>
-                <br>
-                <button class="ui button answer" id="options" id="optionB"> Option B - Lorem, ipsum dolor
-                    sit amet
-                    consectetur adipisicing eli</button>
-                <br>
-                <button class="ui button answer" id="options" id="optionC"> Option C - Lorem, ipsum dolor
-                    sit amet
-                    consectetur adipisicing eli</button>
-                <br>
-                <button class="ui button answer" id="options" id="optionD"> Option D - Lorem, ipsum dolor
-                    sit amet
-                    consectetur adipisicing eli</button>
-                <br>
-                <button class="ui button answer" id="options" id="optionE"> Option E - Lorem, ipsum dolor
-                    sit amet
-                    consectetur adipisicing eli</button>
-                <br>
+            <div class="mainContent">
             </div>
-            <br>
-            <br>
             <br>
             <p class="instructions" id="instructions"> Try to answer the following code-related questions within the
                 time limit. <br> Keep in mind
                 that incorrect answers will penalize your score/timeby ten seconds!!</p>
         </div>
         <br>
-        <div class="response"> Correct Answer or Wrong Answer container</div>
+        <div class="response"> Correct Answer or Wrong Answer Indicator</div>
         <br>
         <button class="ui button " id="startquizbtn"> Start Quiz </button>
-        <br>
     </div>
-
-    </div>
+    <div class="answerIndicator"> </div>
     <script src="Assets/script.js"></script>
 </body>
 
