@@ -13,7 +13,6 @@ const gameOver = () => {
     alert("Game Over")
 }
 
-//------Create questions and options for user to select from------// 
 // const quizQuestions = [{
 //     question: "What element typically contains the link to css styling?",
 //     options: ["<head>", "<footer>", "<title>", "<body>", "<all the above>",],
@@ -57,7 +56,7 @@ const gameOver = () => {
 // },
 // ]
 
-
+//------Create startQuiz function, set starting parameters for the timer, declare variable of questions and options for user to select from------// 
 const startQuiz = () => {
     let timer = 60
     //change options from key value pairs into arrays for 2nd questions to the end //
@@ -100,7 +99,6 @@ const startQuiz = () => {
             let option = document.getElementById("option" + (i + 1))
             option.textContent = quizQuestions[currentQuestionMarker].options[i]
         }
-
     }
 
     const timerInterval = setInterval(() => {
@@ -110,8 +108,11 @@ const startQuiz = () => {
         if (timer <= 0) {
             clearInterval(timerInterval)
             //todo: need to add gameover function here 
+            gameOver()
         }
+
     }, 1000)
+
 
     let questionContent = `<h2 class="question" id="questionHdr">Question</h2>
     <br>
@@ -153,7 +154,6 @@ const startQuiz = () => {
                     score += 10
                     document.querySelector("#score").innerText = score
                 }
-
                 else {
                     alert("Wrong")
                     timer -= 10
@@ -161,22 +161,25 @@ const startQuiz = () => {
                 }
                 currentQuestionMarker++
                 renderQuestion(quizQuestions, currentQuestionMarker)
-
             }
             else { gameOver() }
         })
     })
-    countdown(timer)
     renderQuestion(quizQuestions, currentQuestionMarker)
     startQuizBtn.style.display = "none"
 
 }
+
+
 // the Current question marker increments by one whenever a user answers a question
-// when the current question marker becomes = or more than the question QuestionQuiz.length then it should be gameover. 
-// Check answer function that gives them 1 point if they are right. If they are wrong, the timer loses 10s per the Interval and the current queston marker should go up by 1
+// when the current question marker becomes equal to or more than the QuestionQuiz.length then it should be gameover. 
+// Check answer function that gives them 10 points if they are right. If they are wrong, the timer loses 10s per the Interval and the current queston marker should go up by 1
 // Then call the Render question again. 
-//when the game is over. Display the score and have an iput to submit your initials which stores your reponse in local storage. After that happens it should display the score history which is also 
+
+//when the game is over. Display the score and have an input to submit your initials which stores your reponse in local storage. After that happens it should display the score history which is also 
 // A button on the high score page should then reset the quiz back to the beginning. 
+
+
 
 //---- Configure the Start Quiz Button to Begin the Game ------
 startQuizBtn.addEventListener("click", startQuiz);
